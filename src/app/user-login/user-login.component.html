@@ -1,0 +1,25 @@
+<div class="starter-template">
+  <h2>Habitica - Login</h2>
+  <form [formGroup]="rForm" (ngSubmit)="doLogin(rForm.value)">
+
+    <div class="form-group has-danger">
+      <label>Name
+        <input class="form-control" type="text" formControlName="name">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">
+        This is requiered!
+      </div>
+    </div>
+    <div class="form-group">
+          <label>Password
+          <input class="form-control" type="password" formControlName="password">
+      </label>
+      <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+          This is requiered!
+      </div>
+    </div>
+        
+    <button type="submit" class="btn btn-success" [disabled]="!rForm.valid">Login</button>
+
+  </form>
+</div>
